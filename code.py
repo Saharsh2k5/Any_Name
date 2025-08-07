@@ -1,3 +1,4 @@
+"""This module generates random arithmetic problems for user practice."""
 import random
 import time
 
@@ -7,11 +8,17 @@ MAX_OPERAND = 12
 TOTAL_PROBLEMS = 0
 
 def generate_problem():
+    """Generates a random arithmetic problem and its answer."""
     left = random.randint(MIN_OPERAND, MAX_OPERAND)
     right = random.randint(MIN_OPERAND, MAX_OPERAND)
     operation = random.choice(operators)
     expression = str(left) + " " + operation + " " + str(right)
-    result = eval(expression)
+    if operation == '+':
+        result = left + right
+    elif operation == '-':
+        result = left - right
+    else:
+        result = left * right
     return expression, result
 
 WRONG = 0
