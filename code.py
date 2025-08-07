@@ -28,9 +28,8 @@ for i in range(total_problems):
     if(guess==str(answer)):
         print("Answered Correctly, done with testing")
         break
-    else:
-        print("Try and Try till you get right!")
-        wrong+=1
+    print("Try and Try till you get right!")
+    wrong+=1
           
 end_time=time.time()
 total_time=end_time-start
